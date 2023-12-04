@@ -1,3 +1,3 @@
 ﻿  Projekt2.c
-E:\Studia\JiPP\Projekt2\Projekt2\Projekt2.c(110,47): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+E:\Studia\JiPP\Projekt2\Projekt2\Projekt2.c(113,47): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
   Projekt2.vcxproj -> E:\Studia\JiPP\Projekt2\x64\Debug\Projekt2.exe

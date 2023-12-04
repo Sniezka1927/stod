@@ -86,7 +86,10 @@ int main() {
         return 1;
     }
 
-    fgets(text, sizeof(text), stdin);
+    if (fgets(text, sizeof(text), stdin) == NULL) {
+        printf("Error reading input.\n");
+        return 1;
+    }
     
     // Dynamically allocate memory for the character array
     char* received_text = (char*)malloc((strlen(text) + 1) * sizeof(char));
