@@ -64,7 +64,7 @@ double integer_part(const char* text, int* dot_index, int is_signed) {
     return sum;
 };
 
-double decimals(const char* text, int* dot_index) {
+double decimals_part(const char* text, int* dot_index) {
     // .01 => 0 * 10^-1 + 1 * 10^-2 ....
     double sum = 0;
     int power_level = -1;
@@ -114,12 +114,12 @@ int main() {
         }
 
         // sum integer part
-        double front = integer_part(received_text, &dot_index, is_signed);
+        double integers = integer_part(received_text, &dot_index, is_signed);
         
         // sum decimal part
-        double behind = decimals(received_text, &dot_index);
+        double decimals = decimals_part(received_text, &dot_index);
         
-        double result = front + behind;
+        double result = integers + decimals;
         
         if (is_signed) {
             result *= -1;
@@ -134,6 +134,7 @@ int main() {
 
     // Free the allocated memory
     free(received_text);
+    fclose(file);
     received_text = NULL;
 
     return 0;
