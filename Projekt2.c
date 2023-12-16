@@ -10,6 +10,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <math.h>
+#include <locale.h>
 
 #pragma warning (disable: 4996)
 
@@ -76,6 +77,7 @@ double decimals_part(const char* text, int* dot_index) {
 };
 
 int main() {
+    setlocale(LC_ALL, "polish");
     printf("Enter a string: ");
 
     char text[255];
